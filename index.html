@@ -1671,7 +1671,7 @@ if(view==="gm"){
       labels:["LVP","Hardwood","Carpet","Tile"],
       datasets:[{
         label:"Avg Margin %",
-        data:[44,43,35,38],
+        data:(function(){var types=["LVP","Hardwood","Carpet","Tile"];return types.map(function(t){var matching=JOBS.filter(function(j){return j.product===t;});return matching.length===0?0:Math.round(matching.reduce(function(s,j){return s+j.margin;},0)/matching.length);});})(),
         backgroundColor:[green,gold,red,orange],
         borderRadius:6
       }]
