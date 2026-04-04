@@ -1695,7 +1695,7 @@ function initCFOChart(){
   if(existingCfo) existingCfo.destroy();
   new Chart(canvas,{
     type:"bar",
-    data:{labels:["Labor Budget","Labor Cost","Variance"],datasets:[{data:[JOBS.reduce(function(s,j){return s+(parseFloat(j.labor_budget)||0);},0),JOBS.reduce(function(s,j){return s+(parseFloat(j.crew_payout)||0);},0),JOBS.reduce(function(s,j){return s+(parseFloat(j.labor_budget)||0);},0)-JOBS.reduce(function(s,j){return s+(parseFloat(j.crew_payout)||0);},0)],backgroundColor:[gold,orange,green],borderRadius:6}]},
+    data:{labels:["Labor Budget","Labor Cost","Variance"],datasets:[{data:[0,0,0]},
     options:{plugins:{legend:{display:false}},scales:{y:{ticks:{callback:function(v){return "$"+Math.round(v/1000)+"K";}},grid:{color:"#f0f0f0"}},x:{grid:{display:false}}}}
   });
 
